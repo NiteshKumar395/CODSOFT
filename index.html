@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Olivia Wilson - Personal Portfolio | Creative Designer & Web Developer" />
+  <title>My Personal Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Portfolio Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!--  LOADER  -->
+  <div id="loader">
+   
+    
+  </div>
+
+  <!--  CUSTOM CURSOR -->
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- SCROLL PROGRESS BAR  -->
+  <div id="progress-bar"></div>
+
+  <!--  BACK TO TOP BUTTON  -->
+  <button id="back-top" title="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!--  NAVBAR -->
+  <nav id="navbar">
+    <a href="#home" class="nav-logo">Personal Portfolio</a>
+
+    <ul class="nav-links">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <!--  MOBILE MENU  -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#home"       onclick="closeMobile()">Home</a>
+    <a href="#about"      onclick="closeMobile()">About</a>
+    <a href="#experience" onclick="closeMobile()">Experience</a>
+    <a href="#contact"    onclick="closeMobile()">Contact</a>
+  </div>
+
+  <!-- -->
+  <!--  HOME SECTION     -->
+  <!-- -->
+  <section id="home">
+    <!-- Animated background blobs -->
+    <div class="home-bg">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Left: text content -->
+    <div class="home-content">
+      <p class="home-brand"> Hi, I'm</p>
+      <h1 class="home-title">
+        NITESH
+        <strong>KUMAR</strong>
+      </h1>
+      <p class="home-desc">
+         a passionate technology enthusiast with a strong interest in coding and continuous learning. I enjoy building projects, solving problems, and exploring new technologies. Currently, I am expanding my knowledge in Artificial Intelligence and Machine Learning (AI/ML). While strengthening my programming and technical skills. I am always eager to learn, innovate, and take on new 
+         challenges that help me grow as a developer.
+
+      </p>
+      <a href="#about" class="home-btn">By Nitesh</a>
+    </div>
+
+    <!-- Right: profile image placeholder -->
+    <div class="home-image">
+      <div class="home-image-ring"></div>
+      <div class="home-image-placeholder">
+        <div class="placeholder-silhouette">
+         <img src="niteshpic.jpeg" style="height: 480px;object-fit: cover;"/>
+            <ellipse cx="100" cy="80"  rx="48" ry="52" fill="white"/>
+            <path d="M20 320 C20 220 40 180 100 170 C160 180 180 220 180 320Z" fill="white"/>
+            <rect x="60" y="128" width="80" height="50" rx="8" fill="white"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <span class="home-url">www.reallygreatsite.com</span>
+  </section>
+
+  <!--  -->
+  <!--  ABOUT SECTION                                              -->
+  <!--  -->
+  <section id="about">
+    <div class="section-wrap">
+      <div class="about-grid">
+
+        <!-- Profile image + badge -->
+        <div class="about-img-wrap reveal">
+          <div style="position:relative; display:inline-block; width:100%; text-align:center;">
+            <div style="
+              width:260px; height:260px; border-radius:50%;
+              background:linear-gradient(135deg,rgba(255,255,255,.12),rgba(255,255,255,.04));
+              border:3px solid rgba(255,255,255,.2);
+              box-shadow:0 0 0 16px rgba(255,255,255,.04), 0 8px 40px rgba(13,71,161,.5);
+              margin:0 auto; display:flex; align-items:center; justify-content:center; overflow:hidden;">
+             <img class="about-avatar" src="niteshpic.jpeg" />
+            </div>
+            <div class="about-badge">
+              <span>1+</span>
+              <small>YEARS EXP.</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- About text + skills + counters -->
+        <div class="about-text reveal">
+          <p class="section-label">Who I Am</p>
+          <h2 class="section-title">About Me</h2>
+          <p style="font-size:1.1rem; color:var(--secondary); font-weight:600; margin-top:4px; margin-bottom:16px;">
+            Web Developer &amp; Graphic Designer
+          </p>
+          <div class="section-divider"></div>
+
+          <p>Hi, I'm Nitesh Kumar — a passionate web developer and graphic designer with a love for creating beautiful, intuitive digital experiences. I thrive at the intersection of design and technology, turning complex ideas into pixel-perfect interfaces.</p>
+          <p>With a background in creative design and modern web development, I've helped businesses of all sizes build memorable digital presences that resonate with their audiences.</p>
+
+          <!-- Skill cards -->
+          <div class="skills-grid">
+            <div class="skill-card reveal">
+              <div class="skill-name">UI / Backend Dev</div>
+              <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
+            </div>
+            <div class="skill-card reveal">
+              <div class="skill-name">Frontend Dev</div>
+              <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+            </div>
+            <div class="skill-card reveal">
+              <div class="skill-name">Ads Runner</div>
+              <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+            </div>
+            <div class="skill-card reveal">
+              <div class="skill-name">Graphic Design</div>
+              <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
+            </div>
+          </div>
+
+          <!-- Counters -->
+          <div class="counters">
+            <div class="counter-item reveal">
+              <div class="num" data-target="11">0</div>
+              <small>PROJECTS DONE</small>
+            </div>
+            
+            <div class="counter-item reveal">
+              <div class="num" data-target="1">0</div>
+              <small>YEARS EXP.</small>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!--  -->
+  <!--  EXPERIENCE SECTION          -->
+  <!---->
+  <section id="experience">
+    <div class="section-wrap" style="text-align:center;">
+      <p class="section-label reveal">My Journey</p>
+      <h2 class="section-title reveal">My Experience</h2>
+      <div class="section-divider reveal" style="margin:18px auto 60px;"></div>
+
+      <div class="timeline">
+
+        <!-- 2025 -->
+        <div class="tl-item reveal">
+          <div class="tl-card">
+            <div class="tl-year">2026 — PRESENT</div>
+            <div class="tl-role">Worked With</div>
+            <div class="tl-desc">Currently working with SkillCraft Technology &amp; CodSoft as a web developer intern. Completed 10+ projects in both companies within 1 month.</div>
+          </div>
+          <div class="tl-dot"></div>
+          <div class="tl-spacer"></div>
+        </div>
+
+        <!-- 2024 -->
+        <div class="tl-item reveal">
+          <div class="tl-spacer"></div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-year">2025</div>
+            <div class="tl-role">Frontend Developer</div>
+            <div class="tl-desc"> Completed many pojects and created 10+ responsive websites with modern CSS frameworks with batchmates and colleagues.</div>
+          </div>
+        </div>
+
+        <!-- 2024 -->
+        <div class="tl-item reveal">
+          <div class="tl-card">
+            <div class="tl-year">2023</div>
+            <div class="tl-role">Creative Designer</div>
+            <div class="tl-desc">Developed brand identities, marketing collateral, and digital assets for a diverse portfolio of clients ranging from startups to established enterprises.</div>
+          </div>
+          <div class="tl-dot"></div>
+          <div class="tl-spacer"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+ 
+  <!--  CONTACT SECTION     -->
+  
+  <section id="contact">
+    <div class="section-wrap">
+      <p class="section-label reveal">Get In Touch</p>
+      <h2 class="section-title reveal">Contact Me</h2>
+      <div class="section-divider reveal"></div>
+
+      <div class="contact-grid">
+
+        <!-- Contact Form -->
+        <div class="contact-form reveal">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Name</label>
+              <input type="text" placeholder="Your name" />
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" placeholder="your@email.com" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Subject</label>
+            <input type="text" placeholder="What's it about?" />
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea placeholder="Your message here..."></textarea>
+          </div>
+          <button class="send-btn" id="send-btn">SEND MESSAGE</button>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="contact-info reveal">
+          <div class="contact-info-item">
+            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="info-text">
+              <small>Location</small>
+              <span>Motihari, Bihar, India</span>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="info-icon"><i class="fas fa-envelope"></i></div>
+            <div class="info-text">
+              <small>Email</small>
+              <span>nk1807282@gmail.com</span>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="info-icon"><i class="fas fa-phone"></i></div>
+            <div class="info-text">
+              <small>Phone</small>
+              <span>+91 8809856395</span>
+            </div>
+          </div>
+          <div>
+            <p style="font-size:.78rem; letter-spacing:2px; color:rgba(255,255,255,.5); font-weight:600; text-transform:uppercase; margin-bottom:14px;">Follow Me</p>
+            <div class="social-icons">
+              <a href="https://www.linkedin.com/in/nitesh-kumar-2587823b9?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://github.com/NiteshKumar395" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+              <a href="https://instagram.com/nitesh.introvert" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/nitesh-kumar-2587823b9?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/NiteshKumar395" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://instagram.com/nitesh.introvert" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+      <p>© 2026 Nitesh Kumar's Portfolio —  All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- PORTFOLIO JAVASCRIPT -->
+  <script src="skillcraft.js"></script>
+
+</body>
+</html>
