@@ -1,16 +1,9 @@
-// Select the navbar element
-const navbar = document.getElementById('navbar');
+/* 
+   Nitesh Kumar — PERSONAL PORTFOLIO
+   skillcraft.js
+*/
 
-// Function to handle scroll events
-function handleScroll() {/* 
-   Nitesh Kumar— PERSONAL PORTFOLIO
-   script.js
-    */
-
-/*  LOADER */
-
-
-/* ─── CUSTOM CURSOR ───── */
+/* ─── CUSTOM CURSOR ─────────────────────────────────────────── */
 const cursor = document.getElementById('cursor');
 const ring   = document.getElementById('cursor-ring');
 
@@ -38,7 +31,7 @@ document.querySelectorAll('a, button, .skill-card, .tl-card').forEach(el => {
   });
 });
 
-/*  SCROLL PROGRESS BAR */
+/* ─── SCROLL PROGRESS BAR ───────────────────────────────────── */
 const progressBar = document.getElementById('progress-bar');
 
 window.addEventListener('scroll', () => {
@@ -46,20 +39,16 @@ window.addEventListener('scroll', () => {
   progressBar.style.width = pct + '%';
 });
 
-/*  NAVBAR — scroll glass + active link */
+/* ─── NAVBAR — glass effect + active link ───────────────────── */
 const nav      = document.getElementById('navbar');
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-links a');
 const backTop  = document.getElementById('back-top');
 
 window.addEventListener('scroll', () => {
-  // Glass effect
   nav.classList.toggle('scrolled', window.scrollY > 60);
-
-  // Back-to-top visibility
   backTop.classList.toggle('show', window.scrollY > 400);
 
-  // Active nav link
   let current = '';
   sections.forEach(s => {
     if (window.scrollY >= s.offsetTop - 120) current = s.id;
@@ -69,21 +58,44 @@ window.addEventListener('scroll', () => {
   });
 });
 
-/*  HAMBURGER / MOBILE MENU  */
+/* ─── HAMBURGER / MOBILE MENU ───────────────────────────────── */
 const hamburger  = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobile-menu');
 
+// FIX: use addEventListener (reliable on all mobile browsers)
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('open');
   mobileMenu.classList.toggle('open');
 });
 
+// FIX: close menu properly
 function closeMobile() {
   hamburger.classList.remove('open');
   mobileMenu.classList.remove('open');
 }
 
-/*  SCROLL REVEAL  */
+// FIX: goTo — close menu first, then scroll after animation finishes
+function goTo(sectionId) {
+  closeMobile();
+  setTimeout(function () {
+    var target = document.getElementById(sectionId);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, 320); // wait for menu slide-out before scrolling
+}
+
+// Close mobile menu when tapping outside it
+mobileMenu.addEventListener('click', function (e) {
+  if (e.target === mobileMenu) closeMobile();
+});
+
+// Close on Escape key
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') closeMobile();
+});
+
+/* ─── SCROLL REVEAL ─────────────────────────────────────────── */
 const revealEls = document.querySelectorAll('.reveal');
 
 const revealObserver = new IntersectionObserver(entries => {
@@ -92,12 +104,10 @@ const revealObserver = new IntersectionObserver(entries => {
       entry.target.style.transitionDelay = (i % 5) * 0.1 + 's';
       entry.target.classList.add('visible');
 
-      // Animate skill progress bars inside this element
       entry.target.querySelectorAll('.skill-fill').forEach(fill => {
         fill.style.width = fill.dataset.width + '%';
       });
 
-      // Animate counters inside this element
       entry.target.querySelectorAll('[data-target]').forEach(counter => {
         animateCounter(counter);
       });
@@ -107,7 +117,7 @@ const revealObserver = new IntersectionObserver(entries => {
 
 revealEls.forEach(el => revealObserver.observe(el));
 
-/*  ANIMATED COUNTER  */
+/* ─── ANIMATED COUNTER ──────────────────────────────────────── */
 function animateCounter(el) {
   const target = +el.dataset.target;
   let count    = 0;
@@ -120,7 +130,7 @@ function animateCounter(el) {
   }, 40);
 }
 
-/*  RIPPLE ON SEND BUTTON  */
+/* ─── RIPPLE ON SEND BUTTON ─────────────────────────────────── */
 const sendBtn = document.getElementById('send-btn');
 if (sendBtn) {
   sendBtn.addEventListener('click', function (e) {
@@ -139,7 +149,7 @@ if (sendBtn) {
   });
 }
 
-/*  PARALLAX BLOBS ON MOUSE MOVE  */
+/* ─── PARALLAX BLOBS ────────────────────────────────────────── */
 document.addEventListener('mousemove', e => {
   const x = (e.clientX / window.innerWidth  - 0.5) * 20;
   const y = (e.clientY / window.innerHeight - 0.5) * 20;
@@ -149,7 +159,7 @@ document.addEventListener('mousemove', e => {
   });
 });
 
-/*  SMOOTH SCROLL FOR ANCHOR LINKS  */
+/* ─── SMOOTH SCROLL for desktop nav anchor links ────────────── */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', e => {
     const target = document.querySelector(anchor.getAttribute('href'));
@@ -160,18 +170,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-/*  BACK TO TOP BUTTON  */
+/* ─── BACK TO TOP ───────────────────────────────────────────── */
 backTop.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
-    // If scrolled down more than 50px
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        // If at the top
-        navbar.classList.remove('scrolled');
-    }
-}
-
-// Listen for the scroll event
-window.addEventListener('scroll', handleScroll);
